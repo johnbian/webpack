@@ -4166,7 +4166,7 @@ declare interface ModuleOptions {
 	/**
 	 * An array of rules applied by default for modules.
 	 */
-	defaultRules?: RuleSetRule[];
+	defaultRules?: (RuleSetRule | "...")[];
 
 	/**
 	 * Enable warnings for full dynamic dependencies.
@@ -4200,7 +4200,7 @@ declare interface ModuleOptions {
 	/**
 	 * An array of rules applied for modules.
 	 */
-	rules?: RuleSetRule[];
+	rules?: (RuleSetRule | "...")[];
 
 	/**
 	 * Emit errors instead of warnings when imported names don't exist in imported module.
@@ -4703,6 +4703,7 @@ declare interface Optimization {
 	minimizer?: (
 		| ((this: Compiler, compiler: Compiler) => void)
 		| WebpackPluginInstance
+		| "..."
 	)[];
 
 	/**
@@ -6049,7 +6050,7 @@ declare interface ResolveOptionsWebpackOptions {
 	/**
 	 * Plugins for the resolver.
 	 */
-	plugins?: ResolvePluginInstance[];
+	plugins?: ("..." | ResolvePluginInstance)[];
 
 	/**
 	 * Custom resolver.
@@ -6243,7 +6244,7 @@ declare abstract class ResolverFactory {
 						/**
 						 * Plugins for the resolver.
 						 */
-						plugins?: ResolvePluginInstance[];
+						plugins?: ("..." | ResolvePluginInstance)[];
 						/**
 						 * Custom resolver.
 						 */
@@ -6358,7 +6359,7 @@ declare abstract class ResolverFactory {
 						/**
 						 * Plugins for the resolver.
 						 */
-						plugins?: ResolvePluginInstance[];
+						plugins?: ("..." | ResolvePluginInstance)[];
 						/**
 						 * Custom resolver.
 						 */
@@ -6473,7 +6474,7 @@ declare abstract class ResolverFactory {
 			/**
 			 * Plugins for the resolver.
 			 */
-			plugins?: ResolvePluginInstance[];
+			plugins?: ("..." | ResolvePluginInstance)[];
 			/**
 			 * Custom resolver.
 			 */
@@ -8420,7 +8421,7 @@ declare interface WithOptions {
 			/**
 			 * Plugins for the resolver.
 			 */
-			plugins?: ResolvePluginInstance[];
+			plugins?: ("..." | ResolvePluginInstance)[];
 			/**
 			 * Custom resolver.
 			 */
